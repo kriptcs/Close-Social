@@ -1,0 +1,15 @@
+CREATE TABLE users (
+    user_id int AUTO_INCREMENT,
+    username varchar(255),
+    password_hash varchar(255),
+    user_role int
+  PRIMARY KEY (user_id)
+);
+
+CREATE TABLE posts (
+    post_id int AUTO_INCREMENT,
+    user_id int,
+    content varchar(255),
+  PRIMARY KEY (post_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
